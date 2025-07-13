@@ -10,7 +10,6 @@
 - ✅ Simulation-ready using **Icarus Verilog + GTKWave**
 - ✅ Testbenches for individual modules and top-level loopback
 
-## 🗂️ File Structure
 
 verilog-uart-core/
 ├── Top_tb.v              # Loopback testbench for end-to-end UART system
