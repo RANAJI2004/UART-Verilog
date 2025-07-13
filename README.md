@@ -81,3 +81,17 @@ UART is a serial communication protocol that uses only two wires (TX and RX). It
 ### 📦 Compile
 ```bash
 iverilog -o uart_test Top_tb.v Topmodule.v Transmiiter.v receiver.v baudrateGenerator.v
+```
+### Run the simulation
+```bash
+vvp Top_tb.vvp
+```
+### View the waveform
+```bash
+gtkwave uart_top.vcd
+```
+## 📝 License
+
+This project is open-source and free to use under the [MIT License](LICENSE).
+
+
