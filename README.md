@@ -11,8 +11,7 @@
 - ✅ Testbenches for individual modules and top-level loopback
 
 ---
-
-UART-Verilog
+verilog-uart-core/
 │
 ├── Top_tb.v              # Loopback testbench (full system verification)
 ├── Topmodule.v           # Top-level UART module (integrates TX, RX, baud)
@@ -29,7 +28,6 @@ UART-Verilog
 ├── uart_top.vcd          # Waveform dump from simulation (generated)
 ├── README.md             # Project overview and instructions
 └── LICENSE               # (optional) MIT or open-source license
-
 
 
 ---
