@@ -32,7 +32,7 @@ UART is a serial communication protocol that uses only two wires (TX and RX). It
 
 | Module                 | Description |
 |------------------------|-------------|
-| `Transmiiter.v`        | UART Transmitter — sends start bit, 8 data bits (LSB first), and stop bit. Triggers `tx_done` when complete. (**Fix filename typo: should be `Transmitter.v`**) |
+| `Transmitter.v`        | UART Transmitter — sends start bit, 8 data bits (LSB first), and stop bit. Triggers `tx_done` when complete.) |
 | `receiver.v`           | UART Receiver — synchronizes incoming serial data using 3-stage flip-flops, then samples each bit using 16x oversampling. Detects framing errors and raises `rx_ready` when data is valid. |
 | `baudrateGenerator.v`  | Baud Rate Generator — produces two clocks: `baud_tick` for TX (1x baud) and `baud_tick_16x` for RX (oversampling) based on the system clock. |
 | `Topmodule.v`          | Combines TX, RX, and Baud Generator into one unified UART system. Takes in byte-level TX input and outputs received byte and flags. |
