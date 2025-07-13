@@ -57,7 +57,7 @@ UART is a serial communication protocol that uses only two wires (TX and RX). It
 |------------------------|----------------------------------------------------------------|
 | `Top_tb.v`             | Loopback testbench for end-to-end UART system                 |
 | `Topmodule.v`          | Top-level UART module integrating TX, RX, and baud generator   |
-| `Transmiiter.v`        | UART transmitter module (**typo**, should be `Transmitter.v`)  |
+| `Transmitter.v`        | UART transmitter module                                       |
 | `Tx_tb.v`              | Testbench for the transmitter module                          |
 | `receiver.v`           | UART receiver with 16x oversampling                           |
 | `Rx_tb.v`              | Testbench for the receiver module                             |
