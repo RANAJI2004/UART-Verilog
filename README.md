@@ -80,7 +80,7 @@ UART is a serial communication protocol that uses only two wires (TX and RX). It
 
 ### 📦 Compile
 ```bash
-iverilog -o uart_test Top_tb.v Topmodule.v Transmiiter.v receiver.v baudrateGenerator.v
+iverilog -o uart_test Top_tb.v Topmodule.v Transmitter.v receiver.v baudrateGenerator.v
 ```
 ### Run the simulation
 ```bash
