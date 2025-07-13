@@ -10,6 +10,46 @@
 - ✅ Simulation-ready using **Icarus Verilog + GTKWave**
 - ✅ Testbenches for individual modules and top-level loopback
 
+#  Verilog UART Core
+
+This project implements a complete **UART (Universal Asynchronous Receiver/Transmitter)** system in Verilog, including:
+- a **transmitter**
+- a **receiver with 16x oversampling**
+- a **baud rate generator**, and
+- a **loopback testbench**
+
+It is designed to simulate a real UART communication system and verify data integrity using a self-checking testbench.
+
+---
+
+## 📌 Overview
+
+UART is a serial communication protocol that uses only two wires (TX and RX). It is widely used for low-speed, short-distance communication between microcontrollers, sensors, or PCs. This project replicates UART behavior in hardware using Verilog.
+
+---
+
+## 🔍 Project Modules
+
+| Module                 | Description |
+|------------------------|-------------|
+| `Transmiiter.v`        | UART Transmitter — sends start bit, 8 data bits (LSB first), and stop bit. Triggers `tx_done` when complete. (**Fix filename typo: should be `Transmitter.v`**) |
+| `receiver.v`           | UART Receiver — synchronizes incoming serial data using 3-stage flip-flops, then samples each bit using 16x oversampling. Detects framing errors and raises `rx_ready` when data is valid. |
+| `baudrateGenerator.v`  | Baud Rate Generator — produces two clocks: `baud_tick` for TX (1x baud) and `baud_tick_16x` for RX (oversampling) based on the system clock. |
+| `Topmodule.v`          | Combines TX, RX, and Baud Generator into one unified UART system. Takes in byte-level TX input and outputs received byte and flags. |
+
+---
+
+## 🧪 Testbenches
+
+| Testbench File         | Purpose |
+|------------------------|---------|
+| `Tx_tb.v`              | Sends predefined bytes, verifies TX output serial stream (visually in waveform) |
+| `Rx_tb.v`              | Simulates serial input bit stream and checks receiver output (`rx_data`, `rx_ready`) |
+| `baudrate_tb.v`        | Validates accuracy of `baud_tick` and `baud_tick_16x` outputs at expected timing |
+| `Top_tb.v`             | Full system test with TX and RX connected in loopback. Verifies end-to-end transmission, compares received and transmitted data, and prints success/failure |
+
+---
+
 
 ## 📁 File Structure
 
@@ -35,19 +75,6 @@
 | Clock Frequency  | 1.536 MHz   |
 | Baud Rate        | 9600        |
 | Oversampling     | 16x (Receiver) |
-
----
-
-## 🧪 Testbenches
-
-| File           | Description                                   |
-|----------------|-----------------------------------------------|
-| `baudrate_tb.v`| Validates generation of `baud_tick` and `baud_tick_16x` |
-| `Tx_tb.v`      | Verifies correct serial transmission of data |
-| `Rx_tb.v`      | Tests RX sampling logic and error detection  |
-| `Top_tb.v`     | Simulates full UART loopback TX → RX        |
-
----
 
 ## 🧰 How to Run
 
