@@ -12,17 +12,23 @@
 
 ---
 
-## 🗂️ File Structure
-
-.
-├── baudrateGenerator.v # Baud rate generator module
-├── baudrate_tb.v # Testbench for baud rate generator
-├── receiver.v # UART receiver with 16x oversampling
-├── Rx_tb.v # Testbench for receiver
-├── Transmiiter.v # UART transmitter (note typo: "Transmiiter")
-├── Tx_tb.v # Testbench for transmitter
-├── Topmodule.v # Top-level UART integration
-├── Top_tb.v # Final loopback testbench
+UART-Verilog
+│
+├── Top_tb.v              # Loopback testbench (full system verification)
+├── Topmodule.v           # Top-level UART module (integrates TX, RX, baud)
+│
+├── Transmiiter.v         # UART transmitter module (note typo: should be "Transmitter.v")
+├── Tx_tb.v               # Testbench for transmitter
+│
+├── receiver.v            # UART receiver with 16x oversampling
+├── Rx_tb.v               # Testbench for receiver
+│
+├── baudrateGenerator.v   # Baud rate generator (generates 1x and 16x ticks)
+├── baudrate_tb.v         # Testbench for baud generator
+│
+├── uart_top.vcd          # Waveform dump from simulation (generated)
+├── README.md             # Project overview and instructions
+└── LICENSE               # (optional) MIT or open-source license
 
 
 
