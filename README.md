@@ -4,11 +4,11 @@
 
 ##  Features
 
-- ✅ Parameterized UART system
-- ✅ 16x oversampling UART Receiver
-- ✅ Modular, reusable Verilog code
-- ✅ Simulation-ready using **Icarus Verilog + GTKWave**
-- ✅ Testbenches for individual modules and top-level loopback
+-  Parameterized UART system
+-  16x oversampling UART Receiver
+-  Modular, reusable Verilog code
+-  Simulation-ready using **Icarus Verilog + GTKWave**
+-  Testbenches for individual modules and top-level loopback
 
 #  Verilog UART Core
 
@@ -22,13 +22,13 @@ It is designed to simulate a real UART communication system and verify data inte
 
 ---
 
-## 📌 Overview
+##  Overview
 
 UART is a serial communication protocol that uses only two wires (TX and RX). It is widely used for low-speed, short-distance communication between microcontrollers, sensors, or PCs. This project replicates UART behavior in hardware using Verilog.
 
 ---
 
-## 🔍 Project Modules
+##  Project Modules
 
 | Module                 | Description |
 |------------------------|-------------|
@@ -39,7 +39,7 @@ UART is a serial communication protocol that uses only two wires (TX and RX). It
 
 ---
 
-## 🧪 Testbenches
+##  Testbenches
 
 | Testbench File         | Purpose |
 |------------------------|---------|
@@ -51,7 +51,7 @@ UART is a serial communication protocol that uses only two wires (TX and RX). It
 ---
 
 
-## 📁 File Structure
+##  File Structure
 
 | File Name              | Description                                                    |
 |------------------------|----------------------------------------------------------------|
